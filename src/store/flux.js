@@ -1,16 +1,31 @@
 export default function({ getStore, getActions, setStore }) {
     return {
         store: {
-            loading: false
+            people: [],
+            planets: []
         },
         actions: {
-            setLoading(status) {
-                setStore({loading: status})
-            },
-            toggleLoader() {
+            getPeople(){
                 const store = getStore()
-                setStore({loading: !store.loading})
+                if(store.people.length === 0){
+                    const endpoint ="https://swapi.dev/api/people/"
+                    const config ={
+                        method : "GET"
+                    }
+                    fetch(endpoint,config).then((response)=>{return response.json()}).then((json)=>{setStore({people: json.results})})
+                }
+            },
+            getPlanets(){
+                const store = getStore()
+                if(store.planets.length === 0){
+                    const endpoint ="https://swapi.dev/api/planets/"
+                    const config ={
+                        method : "GET"
+                    }
+                    fetch(endpoint,config).then((response)=>{return response.json()}).then((json)=>{setStore({planets: json.results})})
+                }
             }
+
         }
     }
 }
