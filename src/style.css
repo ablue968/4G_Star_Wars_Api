@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .card{
-    width: 18rem;
+    width: 400px;
+    margin: 1rem 0.5rem;
+    padding: 0rem;
+    height: 330px;
 }
 .peopleDiv{
-    height: 200px;
+    height: 370px;
+    overflow-x: auto;
 }
 .title{
     font-family: 'Lobster', cursive;

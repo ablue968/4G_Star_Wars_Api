@@ -14,9 +14,10 @@ export default function(props) {
     return (
         <>
             <h1 className="title mt-1">Planets</h1>
-            <div className="row peopleDiv overflow-auto">
+            <div className="peopleDiv row flex-row flex-nowrap">
                 {store.planets.map((planet, index) =>
-                    <div key={index} className="card m-2">
+                    <div key={index} className="card col-3">
+                        <img src="http://via.placeholder.com/400x200" className="card-img-top" alt="..."></img>
                         <div className="card-body">
                             <p>Name :{planet.name}</p>
                             <p>Climate :{planet.climate}</p>
@@ -32,6 +33,5 @@ export default function(props) {
             </div>
 
         </> 
-    
 );
 }

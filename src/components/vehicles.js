@@ -15,9 +15,10 @@ export default function (props) {
     return (
         <>
             <h1 className="title mt-1">Vehicles</h1>
-            <div className="row peopleDiv overflow-auto">
+            <div className="peopleDiv row flex-row flex-nowrap">
                 {store.vehicles.map((vehicle, index) =>
-                    <div key={index} className="card m-2">
+                    <div key={index} className="card col-3">
+                        <img src="http://via.placeholder.com/400x200" className="card-img-top" alt="..."></img>
                         <div className="card-body">
                             <p>Name :{vehicle.name}</p>
                             <p>Model :{vehicle.model}</p>
@@ -33,6 +34,7 @@ export default function (props) {
             </div>
 
         </>
+        
 
     );
 }
