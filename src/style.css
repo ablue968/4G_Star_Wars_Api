@@ -15,3 +15,7 @@
     font-family: 'Lobster', cursive;
     color: red;
 }
+
+div span {
+    margin-right: 4rem;
+}
