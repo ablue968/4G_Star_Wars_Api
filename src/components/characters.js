@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store";
-
-
 
 
 export default function (props) {
@@ -22,9 +21,11 @@ export default function (props) {
                         <div className="card-body">
                             <p>Name :{people.name}</p>
                             <p>Gender :{people.gender}</p>
-                            <p>Eye color: {people.eye_color}</p>
+                            <p>Eye color: {people.eyeColor}</p>
                             <div className="d-flex justify-content-around">
-                                <button className="btn btn-outline-primary">Learn more!</button>
+                                <Link to="/character/:id">
+                                    <button className="btn btn-outline-primary">Learn more!</button>
+                                </Link>
                                 <button className="btn btn-outline-warning">♡</button>                        
                             </div>
                         </div>
