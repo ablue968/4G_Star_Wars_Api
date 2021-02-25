@@ -11,9 +11,7 @@ import Footer from "./components/footer.js"
 import Navbar from "./components/navbar.js"
 
 import Home from "./pages/home.js"
-import About from "./pages/about.js"
-import Contact from "./pages/contact.js"
-import User from "./pages/user.js"
+import Detail from "./pages/detail.js"
 
 export default injectContext(function(props) {
     return (
@@ -27,11 +25,11 @@ export default injectContext(function(props) {
                     </Route>
 
                     <Route path="/character/:id">
-                        <Detail tipo="people"/>
+                        <Detail type="character"/>
                     </Route>
 
                     <Route path="/planets/:id">
-                        <Detail tipo="planets"/>
+                        <Detail type="planets"/>
                     </Route>
                 </Switch>
             </div>
