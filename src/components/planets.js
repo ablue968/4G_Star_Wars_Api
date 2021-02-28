@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Context } from "../store";
-
-
 
 
 export default function(props) {
     const { store, actions } = useContext(Context)
+    const history = useHistory();
 
     useEffect(()=>{
         actions.getPlanets();
@@ -23,7 +23,7 @@ export default function(props) {
                             <p>Climate :{planet.climate}</p>
                             <p>Population: {planet.population}</p>
                             <div className="d-flex justify-content-between">
-                                <button className="btn btn-outline-primary">Learn more!</button>
+                                <button className="btn btn-outline-primary" onClick={() => history.push(`/planets/${planet.name}`)}>Learn more!</button>
                                 <button className="btn btn-outline-warning">♡</button>
                             </div>
                         </div>

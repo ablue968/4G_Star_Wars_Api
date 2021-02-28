@@ -1,4 +1,5 @@
-export default function({ getStore, getActions, setStore }) {
+const api = "https://swapi.dev/api/";
+const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             people: [],
@@ -9,7 +10,7 @@ export default function({ getStore, getActions, setStore }) {
             getPeople(){
                 const store = getStore()
                 if(store.people.length === 0){
-                    const endpoint ="https://swapi.dev/api/people/"
+                    const endpoint =`${api}people/`
                     const config ={
                         method : "GET"
                     }
@@ -19,7 +20,7 @@ export default function({ getStore, getActions, setStore }) {
             getPlanets(){
                 const store = getStore()
                 if(store.planets.length === 0){
-                    const endpoint ="https://swapi.dev/api/planets/"
+                    const endpoint =`${api}planets/`
                     const config ={
                         method : "GET"
                     }
@@ -29,7 +30,7 @@ export default function({ getStore, getActions, setStore }) {
             getVehicles(){
                 const store = getStore()
                 if(store.vehicles.length === 0){
-                    const endpoint ="https://swapi.dev/api/vehicles/"
+                    const endpoint =`${api}vehicles/`
                     const config ={
                         method : "GET"
                     }
@@ -40,3 +41,5 @@ export default function({ getStore, getActions, setStore }) {
         }
     }
 }
+
+export default getState;
