@@ -25,7 +25,7 @@ useEffect(()=>{
     return (
         <div className="container">
             <div className="jumbotron">
-                {character}
+                <p>hola!</p>
             </div>
         </div>
     )

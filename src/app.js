@@ -11,7 +11,7 @@ import Footer from "./components/footer.js"
 import Navbar from "./components/navbar.js"
 
 import Home from "./pages/home.js"
-import Detail from "./pages/detail.js"
+import Detail from "./pages/pageDescription.js"
 
 export default injectContext(function(props) {
     return (
@@ -24,11 +24,11 @@ export default injectContext(function(props) {
                         <Home />
                     </Route>
 
-                    <Route path="/character/:id">
+                    <Route path="/character/:name">
                         <Detail type="character"/>
                     </Route>
 
-                    <Route path="/planets/:id">
+                    <Route path="/planets/:name">
                         <Detail type="planet"/>
                     </Route>
                 </Switch>

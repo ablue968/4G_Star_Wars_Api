@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Context } from "../store";
 
 
 export default function (props) {
     const { store, actions } = useContext(Context)
+    const history = useHistory();
+
 
     useEffect(() => {
         actions.getPeople();
@@ -23,9 +25,7 @@ export default function (props) {
                             <p>Gender :{people.gender}</p>
                             <p>Eye color: {people.eyeColor}</p>
                             <div className="d-flex justify-content-around">
-                                <Link to="/character/:id">
-                                    <button className="btn btn-outline-primary">Learn more!</button>
-                                </Link>
+                                <button className="btn btn-outline-primary" onClick={() => history.push(`/character/${people.name}`)}>Learn more!</button>
                                 <button className="btn btn-outline-warning">♡</button>                        
                             </div>
                         </div>
