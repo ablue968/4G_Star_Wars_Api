@@ -25,7 +25,7 @@ export default function (props) {
                             <p>Gender :{people.gender}</p>
                             <p>Eye color: {people.eyeColor}</p>
                             <div className="d-flex justify-content-around">
-                                <button className="btn btn-outline-primary" onClick={() => history.push(`/character/${people.name}`)}>Learn more!</button>
+                                <button className="btn btn-outline-primary" onClick={() => history.push(`/character/${index}`)}>Learn more!</button>
                                 <button className="btn btn-outline-warning">♡</button>                        
                             </div>
                         </div>

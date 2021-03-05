@@ -14,7 +14,7 @@ export default function(props) {
             <div className="jumbotron">
                 <Characters />
                 <Planets />
-                <Vehicles />
+                {/* <Vehicles /> */}
             </div>
         </div>
     )

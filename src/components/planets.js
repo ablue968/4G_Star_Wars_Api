@@ -23,7 +23,7 @@ export default function(props) {
                             <p>Climate :{planet.climate}</p>
                             <p>Population: {planet.population}</p>
                             <div className="d-flex justify-content-between">
-                                <button className="btn btn-outline-primary" onClick={() => history.push(`/planets/${planet.name}`)}>Learn more!</button>
+                                <button className="btn btn-outline-primary" onClick={() => history.push(`/planets/${index}`)}>Learn more!</button>
                                 <button className="btn btn-outline-warning">♡</button>
                             </div>
                         </div>

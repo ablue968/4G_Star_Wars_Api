@@ -24,13 +24,17 @@ export default injectContext(function(props) {
                         <Home />
                     </Route>
 
-                    <Route path="/character/:name">
+                    <Route path="/character/:id">
                         <Detail type="characters"/>
                     </Route>
 
-                    <Route path="/planets/:name">
+                    <Route path="/planets/:id">
                         <Detail type="planets"/>
                     </Route>
+
+                    {/* <Route path="/vehicles/:id">
+                        <Detail type="vehicles"/>
+                    </Route> */}
                 </Switch>
             </div>
 
