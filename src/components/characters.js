@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store";
+import HeartButton from "./heartButton"
 
 
 export default function (props) {
@@ -26,7 +27,7 @@ export default function (props) {
                             <p>Eye color: {people.eyeColor}</p>
                             <div className="d-flex justify-content-around">
                                 <button className="btn btn-outline-primary" onClick={() => history.push(`/character/${index}`)}>Learn more!</button>
-                                <button className="btn btn-outline-warning">♡</button>                        
+                                <HeartButton name={people.name} />                        
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import {Context} from "../store"
 
 export default function(props) {
+    const { store, actions } = useContext(Context);
+    const [ListFav, setListFav] = useState([])
+
+    useEffect(()=>{
+        setListFav(actions.getFavorites())
+    }, [])
+
     return (
 <nav className="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-between">
     <div className="ml-5">
@@ -15,15 +23,20 @@ export default function(props) {
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle btn btn-primary my-2 my-sm-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Favorites
+                                Favorites
                     </a>
-                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {/*acá van los favoritos seleccionados*/}
-                    </div>
-                </li>
-                </ul>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {actions.getFavorites().map((name, index) => {
+                                    return (<a className="dropdown-item p-0 m-0" key={index} href="#">{name}<button onClick={() => actions.deleteFavorites(name)} type="button" className="close m-0" aria-label="Close">
+                                        <span className="m-0 pr-3" aria-hidden="true">X</span>
+                                    </button></a>)
+                                })
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-    </div>
 </nav>
     )
 }
