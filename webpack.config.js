@@ -2,8 +2,8 @@ var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://')
-const publicUrl = `3000-${host}`
+//const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://')
+const publicUrl = `http://localhost:3000/`
 
 module.exports = {
     mode: 'development',
